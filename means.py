@@ -9,30 +9,47 @@ def main():
     print("| Geometric and Harmonic Means |")
     print("--------------------------------\n")
 
-    data = getData()
-    print("data\n----")
-    print(data)
+    housePriceIncreases = getHousePriceIncreases()
+    print("House Price Increases\n---------------------")
+    print(housePriceIncreases)
     print()
 
-    am = arithmeticMean(data)
-    print("arithmetic mean\n---------------")
+    am = arithmeticMean(housePriceIncreases)
+    print("Arithmetic mean (wrong)\n-----------------------")
     print(am)
     print()
 
-    gm = geometricMean(data)
-    print("geometric mean\n---------------")
+    gm = geometricMean(housePriceIncreases)
+    print("Geometric mean (correct)\n------------------------")
     print(gm)
     print()
 
-    hm = harmonicMean(data)
-    print("harmonic mean\n---------------")
+    print("=============================================================\n")
+
+    averageSpeeds = getAverageSpeeds()
+    print("Average speeds\n--------------")
+    print(averageSpeeds)
+    print()
+
+    am = arithmeticMean(averageSpeeds)
+    print("Arithmetic mean (wrong)\n-----------------------")
+    print(am)
+    print()
+
+    hm = harmonicMean(averageSpeeds)
+    print("Harmonic mean (correct)\n-----------------------")
     print(hm)
     print()
 
 
-def getData():
+def getHousePriceIncreases():
 
-    return np.array([828, 163, 465, 199, 647, 363, 711, 348, 142, 665, 972, 718, 93, 176, 474, 924], dtype=np.float64)
+    return np.array([1.065, 1.022, 1.015, 1.028, 1.035, 1.048, 1.055, 1.042, 1.044, 1.039], dtype=np.float64)
+
+
+def getAverageSpeeds():
+
+    return np.array([42, 63, 78, 48, 71, 63, 73, 44, 68, 63, 73, 60], dtype=np.float64)
 
 
 def arithmeticMean(data):
